@@ -3,7 +3,7 @@
 Not finished
 
 What I Learned:
-- l'il bit of CoreData
+- li'l bit of CoreData
 - How complicated are some features
 - Greatness of designers
 
