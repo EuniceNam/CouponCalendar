@@ -17,7 +17,7 @@ struct InsertionView: View {
     @State var dueDate : Date = Date()
     @State var tmpgfTF: [String] = ["", "", ""]
     @State var tmpMm: String = ""
-    @State var placeType: PlaceType?
+    @State var placeType = PlaceType.etc
     
     @Binding var nav: Bool
     
@@ -35,6 +35,7 @@ struct InsertionView: View {
                     
                     Text("새 쿠폰 입력하기")
                         .font(.titleFont)
+                        .padding(.bottom)
                     Group{
                         HStack{
                             Text(labels[0]).frame(width: 80, alignment: .leading)
@@ -140,7 +141,7 @@ struct InsertionView: View {
 //                            if !checkRequiredField(){
 //                                Alert(title: "사용기한을 입력해주세요", dismissButton: .default(Text("OK")))
 //                            }else{
-                            addNewCoupon(required: tmpTF, dueDate: dueDate, placetype: placeType?.rawValue ?? 3, context: viewContext)
+                            addNewCoupon(required: tmpTF, dueDate: dueDate, placetype: placeType.rawValue ?? 3, context: viewContext)
                             clearTF()
                             nav.toggle()
 //                            }

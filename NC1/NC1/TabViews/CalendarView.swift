@@ -51,6 +51,8 @@ struct CalendarView: View {
 //        return currentMonth
 //    }
 
+    @State var isCouponView: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading){
             
@@ -100,23 +102,49 @@ struct CalendarView: View {
             Divider().padding()
             LazyVStack{
                 //ForEach
-                Text("Dates")
+                HStack{
+                    Text(currDate, style: .date)
+                        .font(.mainFont)
+                    Spacer()
+                }.padding(.horizontal)
                 HStack{
                     VStack{
                         Text(Image(systemName: "checkmark.circle.fill")).foregroundColor(.greenColor)
                         + Text(" 사용함")
-                        Text("Photos")
+                        //Text("Photos")
+                        Image("g1").resizable().frame(width: 50, height: 50).grayscale(1.0)
+//                            .onTapGesture {
+//                                <#code#>
+//                            }
+                        Spacer()
                     }.padding()
                     Spacer()
                     VStack{
                         Text(Image(systemName: "stopwatch.fill")).foregroundColor(.redAccentColor) //or clock
                         + Text(" 사용 필요")
-                        Text("Photos")
+                        //Text("Photos")
+                        HStack{
+                            Image("g1").resizable().frame(width: 50, height: 50)
+                                .onTapGesture {
+                                    isCouponView.toggle()
+                                }
+                            Image("g1").resizable().frame(width: 50, height: 50)
+                                .onTapGesture {
+                                    isCouponView.toggle()
+                                }
+                        }
+//                        NavigationLink(destination: CouponView($isCouponView), isActive: $isCouponView){
+//                            Image("g1").resizable().scaledToFit().frame(width: 30, height: 30)
+//                        }
+                        Spacer()
                     }.padding()
                     Spacer()
                     
                 }
             }
+        }
+        .sheet(isPresented: $isCouponView){
+            CouponView(isCouponView: $isCouponView)
         }
 //        .onChange(of: currentDate){ newVal in
 //

@@ -30,7 +30,7 @@ struct AdditionView: View {
                             .foregroundColor(.black)
                     }
                 }
-            }
+            }.navigationBarHidden(true)
         }
     }
 }
