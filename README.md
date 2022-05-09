@@ -1,9 +1,12 @@
 # CouponCalendar
 
+An app that helps manage mobile coupon (a.k.a. gifticon) by showing a calendar and giving notifications. 
+It uses images of coupons and works locally. 
+
 Not finished
 
 What I Learned:
-- li'l bit of CoreData
+- Li'l bit of CoreData
 - How complicated are some features
 - Greatness of designers
 
@@ -16,4 +19,4 @@ Need to add:
 - Better metacognition to my brain
 
 Want to add: 
-- push notification <- requires a pricy account
+- Push notification
